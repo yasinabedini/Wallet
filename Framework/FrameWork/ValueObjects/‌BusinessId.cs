@@ -1,5 +1,6 @@
-﻿using AIPFramework.Exceptions;
-using AIPFramework.ValueObjects.Rule;
+﻿
+using Framework.Exceptions;
+using Framework.ValueObjects.Rule;
 
 namespace Framework.ValueObjects;
 public class BusinessId : BaseValueObject<BusinessId>

@@ -1,5 +1,4 @@
-﻿using AIPFramework.Commands;
-using MediatR;
+﻿using MediatR;
 
 namespace Framework.Queries;
 /// <summary>
