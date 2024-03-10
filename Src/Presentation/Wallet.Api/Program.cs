@@ -1,4 +1,9 @@
+using Microsoft.Extensions.Options;
+using Wallet.Application;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddApplication();
+
 
 // Add services to the container.
 
