@@ -1,13 +1,4 @@
-﻿using AIPFramework.Entities;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Wallet.Domain.Common.Repositories
+﻿namespace Wallet.Domain.Common.Repositories
 {
     public interface IRepository<TEntity>
     {

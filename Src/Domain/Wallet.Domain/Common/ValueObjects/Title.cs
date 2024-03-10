@@ -1,5 +1,5 @@
-﻿using AIPFramework.ValueObjects;
-using AYweb.Domain.Common.Rules;
+﻿using Framework.ValueObjects;
+using Wallet.Domain.Common.Rules;
 
 namespace Wallet.Domain.Common.ValueObjects;
 public class Title : BaseValueObject<Title>

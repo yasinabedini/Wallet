@@ -1,6 +1,5 @@
-﻿using AIPFramework.ValueObjects;
-using AYweb.Domain.Common.Rules;
-using AYweb.Domain.Models.User.Rules;
+﻿using Framework.ValueObjects;
+using Wallet.Domain.Common.Rules;
 
 namespace Wallet.Domain.Common.ValueObjects;
 public class PhoneNumber : BaseValueObject<PhoneNumber>

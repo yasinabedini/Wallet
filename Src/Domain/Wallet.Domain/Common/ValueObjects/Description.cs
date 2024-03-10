@@ -1,11 +1,5 @@
-﻿using AIPFramework.Exceptions;
-using AIPFramework.ValueObjects;
-using AYweb.Domain.Common.Rules;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Framework.ValueObjects;
+using Wallet.Domain.Common.Rules;
 
 namespace Wallet.Domain.Common.ValueObjects;
 

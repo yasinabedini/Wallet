@@ -1,4 +1,4 @@
-﻿using AIPFramework.Exceptions;
+﻿using Framework.Exceptions;
 
 namespace Wallet.Domain.Common.Rules;
 

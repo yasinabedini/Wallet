@@ -1,5 +1,4 @@
-﻿using AIPFramework.ValueObjects;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Wallet.Domain.Common.ValueObjects.Conversion;
 

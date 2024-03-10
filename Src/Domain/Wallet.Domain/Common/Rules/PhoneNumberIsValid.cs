@@ -1,4 +1,4 @@
-﻿using AIPFramework.Exceptions;
+﻿using Framework.Exceptions;
 using System.Text.RegularExpressions;
 
 namespace Wallet.Domain.Common.Rules;
