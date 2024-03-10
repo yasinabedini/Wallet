@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace Wallet.Api.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -52,6 +54,16 @@ namespace Wallet.Api.Migrations
                         principalTable: "Wallets",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Wallets",
+                columns: new[] { "Id", "CreateAt", "IsDelete", "ModifiedAt", "PhoneNumber", "WalletTitle" },
+                values: new object[,]
+                {
+                    { 1L, new DateTime(2024, 3, 10, 21, 51, 51, 695, DateTimeKind.Local).AddTicks(4936), false, null, "09106966244", "Personal Box " },
+                    { 2L, new DateTime(2024, 3, 10, 21, 51, 51, 695, DateTimeKind.Local).AddTicks(4961), false, null, "09106966244", "saving Box " },
+                    { 3L, new DateTime(2024, 3, 10, 21, 51, 51, 695, DateTimeKind.Local).AddTicks(4967), false, null, "09106966244", "loan Box " }
                 });
 
             migrationBuilder.CreateIndex(

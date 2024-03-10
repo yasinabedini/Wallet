@@ -12,8 +12,8 @@ using Wallet.Infra.Contexts;
 namespace Wallet.Api.Migrations
 {
     [DbContext(typeof(WalletDbContext))]
-    [Migration("20240310154710_Init")]
-    partial class Init
+    [Migration("20240310182151_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -98,6 +98,35 @@ namespace Wallet.Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Wallets");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1L,
+                            CreateAt = new DateTime(2024, 3, 10, 21, 51, 51, 695, DateTimeKind.Local).AddTicks(4936),
+                            IsDelete = false,
+                            PhoneNumber = "09106966244",
+                            WalletBalance = 0,
+                            WalletTitle = "Personal Box "
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            CreateAt = new DateTime(2024, 3, 10, 21, 51, 51, 695, DateTimeKind.Local).AddTicks(4961),
+                            IsDelete = false,
+                            PhoneNumber = "09106966244",
+                            WalletBalance = 0,
+                            WalletTitle = "saving Box "
+                        },
+                        new
+                        {
+                            Id = 3L,
+                            CreateAt = new DateTime(2024, 3, 10, 21, 51, 51, 695, DateTimeKind.Local).AddTicks(4967),
+                            IsDelete = false,
+                            PhoneNumber = "09106966244",
+                            WalletBalance = 0,
+                            WalletTitle = "loan Box "
+                        });
                 });
 
             modelBuilder.Entity("Wallet.Domain.Models.Transaction.Entities.Transaction", b =>
