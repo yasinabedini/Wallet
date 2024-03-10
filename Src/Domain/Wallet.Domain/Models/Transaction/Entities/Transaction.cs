@@ -26,5 +26,6 @@ public class Transaction : AggregateRoot
         Price = price;
         Type = type == 1 ? _TransactionType.Deposit_Money : _TransactionType.Withdraw_Money;
         Description = description;
+        CreateAt  = DateTime.Now;
     }
 }

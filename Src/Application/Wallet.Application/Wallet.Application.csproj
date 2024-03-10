@@ -18,4 +18,10 @@
     <ProjectReference Include="..\..\Infra\Wallet.Infra\Wallet.Infra.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Wallet\Queries\" />
+    <Folder Include="Models\Transaction\Commands\" />
+    <Folder Include="Models\Transaction\Queries\" />
+  </ItemGroup>
+
 </Project>

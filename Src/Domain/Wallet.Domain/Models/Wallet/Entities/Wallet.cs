@@ -10,12 +10,18 @@ public class Wallet : AggregateRoot
     public int WalletBalance { get; private set; }
 
     protected Wallet() { }
-
-    public Wallet(string walletTitle, string phoneNumber, int walletBalance)
+    public Wallet(int id,string walletTitle, string phoneNumber)
+    {
+        Id = id;
+        WalletTitle = walletTitle;
+        PhoneNumber = phoneNumber;
+        CreateAt = DateTime.Now;
+    }
+    public Wallet(string walletTitle, string phoneNumber)
     {
         WalletTitle = walletTitle;
         PhoneNumber = phoneNumber;
-        WalletBalance = walletBalance;
+        CreateAt = DateTime.Now;
     }
 
     private void Modified()
@@ -28,4 +34,24 @@ public class Wallet : AggregateRoot
         WalletTitle = title;
         Modified();
     }
+
+    public int ChangeWalletBalance(int amount)
+    {
+        WalletBalance = amount;
+        Modified();
+        return WalletBalance;
+    }
+
+    public void IncreaseWalletBalance(int amount)
+    {
+        WalletBalance += amount;
+        Modified();
+    }
+
+    public void DecreaseWalletBalance(int amount)
+    {
+        WalletBalance -= amount;
+        Modified();
+    }
 }
+

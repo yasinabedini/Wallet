@@ -19,6 +19,14 @@ public class WalletDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+
+        modelBuilder.Entity<Wallet.Domain.Models.Wallet.Entities.Wallet>().HasData(new List<Domain.Models.Wallet.Entities.Wallet>
+        {
+            new Domain.Models.Wallet.Entities.Wallet(1,"Personal Box ","09106966244"),
+            new Domain.Models.Wallet.Entities.Wallet(2,"saving Box ","09106966244"),
+            new Domain.Models.Wallet.Entities.Wallet(3,"loan Box ","09106966244"),
+        });
+
         modelBuilder.Ignore(typeof(BusinessId));
 
         modelBuilder.ApplyConfigurationsFromAssembly(typeof(WalletDbContext).Assembly);

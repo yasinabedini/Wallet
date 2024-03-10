@@ -10,6 +10,6 @@ public class WalletConfig : IEntityTypeConfiguration<Domain.Models.Wallet.Entiti
     {
         builder.Property(t => t.WalletTitle).IsRequired().HasMaxLength(250).HasConversion<TitleConversion>();
         builder.Property(t => t.PhoneNumber).IsRequired().HasMaxLength(13).HasConversion<PhoneNumberConversion>();
-        builder.Property(t => t.WalletBalance).IsRequired().HasDefaultValue(0);        
+        builder.Property(t => t.WalletBalance).IsRequired().HasDefaultValue(0);              
     }
 }
