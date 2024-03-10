@@ -1,11 +1,11 @@
 ﻿using Framework.Entities;
 using Wallet.Domain.Common.ValueObjects;
 
-namespace Wallet.Domain.Models.Wallet;
+namespace Wallet.Domain.Models.Wallet.Entities;
 
 public class Wallet : AggregateRoot
 {
-    public Title WalletTitle { get;private set; }
+    public Title WalletTitle { get; private set; }
     public PhoneNumber PhoneNumber { get; private set; }
     public int WalletBalance { get; private set; }
 
