@@ -1,11 +1,12 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Runtime.CompilerServices;
 using Wallet.Application.Models.Wallet.Commands.AddWallet;
+using Wallet.Application.Models.Wallet.Commands.CheckWalletAvailability;
+using Wallet.Application.Models.Wallet.Commands.CheckWalletBalance;
 using Wallet.Application.Models.Wallet.Commands.DepositToWallet;
 using Wallet.Application.Models.Wallet.Commands.TransferMoney;
 using Wallet.Application.Models.Wallet.Commands.WithdrawFromWallet;
+using Wallet.Application.Models.Wallet.Queries.GetWallet;
 
 namespace Wallet.Api.Controllers
 {
@@ -21,7 +22,7 @@ namespace Wallet.Api.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(AddWalletCommand command)
+        public IActionResult Create([FromBody] AddWalletCommand command)
         {
             _sender.Send(command);
 
@@ -29,31 +30,63 @@ namespace Wallet.Api.Controllers
         }
 
         [HttpDelete]
-        public IActionResult Delete(DeleteWalletCommand command)
+        public  IActionResult Delete([FromBody] DeleteWalletCommand command)
         {
+            if (!_sender.Send(new CheckWalletAvailabilityCommand(command.WalletId)).Result)
+            {
+                return NotFound();
+            }
+
             _sender.Send(command);
             return Ok("Wallet Deleted SuccessFully.");
         }
 
         [HttpPost("TransferMoney")]
-        public IActionResult TransferMoney(TransferMoneyCommand command)
+        public IActionResult TransferMoney([FromBody] TransferMoneyCommand command)
         {
+            if (!_sender.Send(new CheckWalletAvailabilityCommand(command.SourceWalletId)).Result|| !_sender.Send(new CheckWalletAvailabilityCommand(command.DestinationWalletId)).Result)
+            {
+                return NotFound();
+            }
+
+            if (!_sender.Send(new CheckWalletBalanceCommand(command.SourceWalletId,command.Amount)).Result)
+            {
+                Response.StatusCode = 406;                
+                return Content("Source wallet has no balance");
+            }
+
             string message = _sender.Send(command).Result;
 
             return Ok(message);
         }
 
         [HttpPost("WithdrawFromWallet")]
-        public IActionResult WithdrawFromWallet(WithdrawFromWalletCommand command)
+        public IActionResult WithdrawFromWallet([FromBody]WithdrawFromWalletCommand command)
         {
+            if (!_sender.Send(new CheckWalletAvailabilityCommand(command.WalletId)).Result)
+            {
+                return NotFound();
+            }
+
+            if (!_sender.Send(new CheckWalletBalanceCommand(command.WalletId, command.Amount)).Result)
+            {
+                Response.StatusCode = 406;
+                return Content("Your wallet has no balance");
+            }
+
             string message = _sender.Send(command).Result;
 
             return Ok(message);
         }
 
         [HttpPost("DepositToWallet")]
-        public IActionResult DepositToWallet(DepositToWalletCommand command)
+        public IActionResult DepositToWallet([FromBody] DepositToWalletCommand command)
         {
+            if (!_sender.Send(new CheckWalletAvailabilityCommand(command.WalletId)).Result)
+            {
+                return NotFound();
+            }
+
             string message = _sender.Send(command).Result;
             return Ok(message);
         }
