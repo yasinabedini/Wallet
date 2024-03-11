@@ -9,8 +9,9 @@ namespace Wallet.Application.Models.Wallet.Commands.TransferMoney
 {
     public class TransferMoneyCommand:ICommand<string>
     {
-        public int SourceWalletId { get; set; }
-        public int DestinationWalletId { get; set; }
-        public int Amount { get; set; }
+        public int SourceWalletId { get; set; }     
+        public List<Tuple<int, int>> DestinationWallets { get; set; }
+
+   
     }
 }

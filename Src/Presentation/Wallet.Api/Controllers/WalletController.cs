@@ -69,13 +69,14 @@ namespace Wallet.Api.Controllers
 
         [HttpPost("TransferMoney")]
         public IActionResult TransferMoney([FromBody] TransferMoneyCommand command)
-        {
-            if (!_sender.Send(new CheckWalletAvailabilityCommand(command.SourceWalletId)).Result|| !_sender.Send(new CheckWalletAvailabilityCommand(command.DestinationWalletId)).Result)
+        {            
+            if (!_sender.Send(new CheckWalletAvailabilityCommand(command.SourceWalletId)).Result|| command.DestinationWallets.All(t=>_sender.Send(new CheckWalletAvailabilityCommand(t.Item1)).Result))
             {
-                return NotFound();
+                Response.StatusCode = 404;
+                return Content("You entered the wrong ID of one of the Source wallets");
             }
 
-            if (!_sender.Send(new CheckWalletBalanceCommand(command.SourceWalletId,command.Amount)).Result)
+            if (!_sender.Send(new CheckWalletBalanceCommand(command.SourceWalletId, command.DestinationWallets.Sum(t => t.Item2))).Result)
             {
                 Response.StatusCode = 406;                
                 return Content("Source wallet has no balance");

@@ -21,10 +21,12 @@ public class TransferMoneyCommandHandler : ICommandHandler<TransferMoneyCommand,
 
     public Task<string> Handle(TransferMoneyCommand request, CancellationToken cancellationToken)
     {
-        _sender.Send(new WithdrawFromWalletCommand(request.SourceWalletId, request.Amount));
-        _sender.Send(new DepositToWalletCommand(request.DestinationWalletId, request.Amount));
-
-        string message = $"The amount of {request.Amount} was withdrawn from wallet number {request.DestinationWalletId} and deposited into wallet number {request.SourceWalletId}.";
-        return Task.FromResult(message);
+        _sender.Send(new WithdrawFromWalletCommand(request.SourceWalletId, request.DestinationWallets.Sum(t=>t.Item2)));
+        foreach (var destinationWallet in request.DestinationWallets)
+        {
+            _sender.Send(new DepositToWalletCommand(destinationWallet.Item1, destinationWallet.Item2));
+        }
+        
+        return Task.FromResult("The transfer was successful.");
     }    
 }
