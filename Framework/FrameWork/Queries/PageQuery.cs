@@ -31,7 +31,7 @@ public class PageQuery<TData> : IPageQuery<TData>
     /// جهت مرتب سازی داده‌ها که به صورت صعودی انجام می‌شود یا نزولی
     /// </summary>
     public bool SortAscending { get; set; }
-    public int PageCount { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+    public int PageCount { get; set; }
 }
 
 

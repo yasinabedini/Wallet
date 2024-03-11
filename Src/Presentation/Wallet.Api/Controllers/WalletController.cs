@@ -7,6 +7,8 @@ using Wallet.Application.Models.Wallet.Commands.DepositToWallet;
 using Wallet.Application.Models.Wallet.Commands.TransferMoney;
 using Wallet.Application.Models.Wallet.Commands.WithdrawFromWallet;
 using Wallet.Application.Models.Wallet.Queries.GetWallet;
+using Wallet.Application.Models.Wallet.Queries.GetWalletByPhoneNumber;
+using Wallet.Application.Models.Wallet.Queries.GetWallets;
 
 namespace Wallet.Api.Controllers
 {
@@ -19,6 +21,30 @@ namespace Wallet.Api.Controllers
         public WalletController(ISender sender)
         {
             _sender = sender;
+        }
+
+        [HttpPost("GetAll")]
+        public IActionResult GetAllWallets([FromBody]GetWalletsQuery query)
+        {
+            Response.StatusCode = 200;
+            Response.ContentType = "application/json";
+            return Ok(_sender.Send(query).Result);
+        }
+
+        [HttpPost("GetById")]
+        public IActionResult GetById(GetWalletQuery query)
+        {
+            Response.StatusCode = 200;
+            Response.ContentType = "application/json";
+            return Ok(_sender.Send(query).Result);
+        }
+
+        [HttpPost("GetWalleyByPhoneNumber")]
+        public IActionResult GetWalleyByPhoneNumber(GetWalletByPhoneNumberQuery query)
+        {
+            Response.StatusCode = 200;
+            Response.ContentType = "application/json";
+            return Ok(_sender.Send(query).Result);
         }
 
         [HttpPost]
