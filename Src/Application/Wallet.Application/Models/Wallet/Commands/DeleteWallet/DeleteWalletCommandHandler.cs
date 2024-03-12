@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Wallet.Domain.Models.Wallet.Repositories;
 
-namespace Wallet.Application.Models.Wallet.Commands.AddWallet
+namespace Wallet.Application.Models.Wallet.Commands.DeleteWallet
 {
     public class DeleteWalletCommandHandler : ICommandHandler<DeleteWalletCommand>
     {

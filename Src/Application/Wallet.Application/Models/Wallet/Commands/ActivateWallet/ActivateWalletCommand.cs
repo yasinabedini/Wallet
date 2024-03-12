@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Wallet.Application.Models.Wallet.Commands.DeleteWallet
+namespace Wallet.Application.Models.Wallet.Commands.ActivateWallet
 {
-    public class DeleteWalletCommand : ICommand
+    public class ActivateWalletCommand:ICommand
     {
         public int WalletId { get; set; }
     }
