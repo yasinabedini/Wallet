@@ -1,4 +1,5 @@
-﻿using Framework.Entities;
+﻿
+using Framework.Entities;
 using Wallet.Domain.Common.ValueObjects;
 
 namespace Wallet.Domain.Models.Wallet.Entities;
@@ -8,6 +9,8 @@ public class Wallet : AggregateRoot
     public Title WalletTitle { get; private set; }
     public PhoneNumber PhoneNumber { get; private set; }
     public int WalletBalance { get; private set; }
+    public bool IsActive { get;private  set; }
+
 
     protected Wallet() { }
     public Wallet(int id,string walletTitle, string phoneNumber)
@@ -52,6 +55,16 @@ public class Wallet : AggregateRoot
     {
         WalletBalance -= amount;
         Modified();
+    }
+
+    public void Activate()
+    {
+        if (!IsActive) IsActive = true;Modified();
+    }
+
+    public void DisActivate()
+    {
+        if (IsActive) IsActive = false; Modified();
     }
 }
 
