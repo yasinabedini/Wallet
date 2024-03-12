@@ -1,9 +1,13 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Wallet.Application.Models.Wallet.Commands.AddWallet;
+using Wallet.Application.Models.Wallet.Commands.BuyMobileRecharge;
 using Wallet.Application.Models.Wallet.Commands.CheckWalletAvailability;
 using Wallet.Application.Models.Wallet.Commands.CheckWalletBalance;
-using Wallet.Application.Models.Wallet.Commands.DepositToWallet;
+using Wallet.Application.Models.Wallet.Commands.DeleteWallet;
+using Wallet.Application.Models.Wallet.Commands.PayingBill;
+using Wallet.Application.Models.Wallet.Commands.ProductPurchase;
+using Wallet.Application.Models.Wallet.Commands.RechargeWallet;
 using Wallet.Application.Models.Wallet.Commands.TransferMoney;
 using Wallet.Application.Models.Wallet.Commands.WithdrawFromWallet;
 using Wallet.Application.Models.Wallet.Queries.GetWallet;
@@ -47,7 +51,7 @@ namespace Wallet.Api.Controllers
             return Ok(_sender.Send(query).Result);
         }
 
-        [HttpPost]
+        [HttpPost("CreateWallet")]
         public IActionResult Create([FromBody] AddWalletCommand command)
         {
             _sender.Send(command);
@@ -70,10 +74,10 @@ namespace Wallet.Api.Controllers
         [HttpPost("TransferMoney")]
         public IActionResult TransferMoney([FromBody] TransferMoneyCommand command)
         {            
-            if (!_sender.Send(new CheckWalletAvailabilityCommand(command.SourceWalletId)).Result|| command.DestinationWallets.All(t=>_sender.Send(new CheckWalletAvailabilityCommand(t.Item1)).Result))
+            if (!_sender.Send(new CheckWalletAvailabilityCommand(command.SourceWalletId)).Result|| !command.DestinationWallets.All(t=>_sender.Send(new CheckWalletAvailabilityCommand(t.Item1)).Result))
             {
                 Response.StatusCode = 404;
-                return Content("You entered the wrong ID of one of the Source wallets");
+                return Content("You entered the wrong ID of one of the destinations wallets or source wallet.");
             }
 
             if (!_sender.Send(new CheckWalletBalanceCommand(command.SourceWalletId, command.DestinationWallets.Sum(t => t.Item2))).Result)
@@ -106,12 +110,66 @@ namespace Wallet.Api.Controllers
             return Ok(message);
         }
 
-        [HttpPost("DepositToWallet")]
-        public IActionResult DepositToWallet([FromBody] DepositToWalletCommand command)
+        [HttpPost("RechargeWallet")]
+        public IActionResult RechargeWallet([FromBody] RechargeWalletCommand command)
         {
             if (!_sender.Send(new CheckWalletAvailabilityCommand(command.WalletId)).Result)
             {
                 return NotFound();
+            }
+
+            string message = _sender.Send(command).Result;
+            return Ok(message);
+        }
+
+        [HttpPost("PayingBill")]
+        public IActionResult PayingBill([FromBody] PayingBillCommand command)
+        {
+            if (!_sender.Send(new CheckWalletAvailabilityCommand(command.WalletId)).Result)
+            {
+                return NotFound();
+            }
+
+            if (!_sender.Send(new CheckWalletBalanceCommand(command.WalletId, command.BillAmount)).Result)
+            {
+                Response.StatusCode = 406;
+                return Content("Your wallet has no balance");
+            }
+
+            string message = _sender.Send(command).Result;
+            return Ok(message);
+        }
+
+        [HttpPost("ProductPurchase")]
+        public IActionResult ProductPurchase([FromBody] ProductPurchaseCommand command)
+        {
+            if (!_sender.Send(new CheckWalletAvailabilityCommand(command.WalletId)).Result)
+            {
+                return NotFound();
+            }
+
+            if (!_sender.Send(new CheckWalletBalanceCommand(command.WalletId, command.Amount)).Result)
+            {
+                Response.StatusCode = 406;
+                return Content("Your wallet has no balance");
+            }
+
+            string message = _sender.Send(command).Result;
+            return Ok(message);
+        }
+
+        [HttpPost("BuyMobileRecharge")]
+        public IActionResult BuyMobileRecharge([FromBody] BuyMobileRechargeCommand command)
+        {
+            if (!_sender.Send(new CheckWalletAvailabilityCommand(command.WalletId)).Result)
+            {
+                return NotFound();
+            }
+
+            if (!_sender.Send(new CheckWalletBalanceCommand(command.WalletId, command.RechargeAmount)).Result)
+            {
+                Response.StatusCode = 406;
+                return Content("Your wallet has no balance");
             }
 
             string message = _sender.Send(command).Result;
