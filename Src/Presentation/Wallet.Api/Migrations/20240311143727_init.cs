@@ -22,6 +22,7 @@ namespace Wallet.Api.Migrations
                     WalletTitle = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(13)", maxLength: 13, nullable: false),
                     WalletBalance = table.Column<int>(type: "int", nullable: false, defaultValue: 0),
+                    IsActive = table.Column<bool>(type: "bit", nullable: false, defaultValue: true),
                     CreateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDelete = table.Column<bool>(type: "bit", nullable: false)
@@ -39,8 +40,11 @@ namespace Wallet.Api.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     WalletId = table.Column<long>(type: "bigint", nullable: false),
                     Price = table.Column<int>(type: "int", nullable: false),
-                    Type = table.Column<int>(type: "int", nullable: false),
+                    Type = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Reason = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    SourceWalletId = table.Column<long>(type: "bigint", nullable: true),
+                    DestinationWalletId = table.Column<long>(type: "bigint", nullable: true),
                     CreateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ModifiedAt = table.Column<DateTime>(type: "datetime2", nullable: true),
                     IsDelete = table.Column<bool>(type: "bit", nullable: false)
@@ -61,9 +65,9 @@ namespace Wallet.Api.Migrations
                 columns: new[] { "Id", "CreateAt", "IsDelete", "ModifiedAt", "PhoneNumber", "WalletTitle" },
                 values: new object[,]
                 {
-                    { 1L, new DateTime(2024, 3, 10, 21, 51, 51, 695, DateTimeKind.Local).AddTicks(4936), false, null, "09106966244", "Personal Box " },
-                    { 2L, new DateTime(2024, 3, 10, 21, 51, 51, 695, DateTimeKind.Local).AddTicks(4961), false, null, "09106966244", "saving Box " },
-                    { 3L, new DateTime(2024, 3, 10, 21, 51, 51, 695, DateTimeKind.Local).AddTicks(4967), false, null, "09106966244", "loan Box " }
+                    { 1L, new DateTime(2024, 3, 11, 18, 7, 27, 378, DateTimeKind.Local).AddTicks(5056), false, null, "09106966244", "Personal Box " },
+                    { 2L, new DateTime(2024, 3, 11, 18, 7, 27, 378, DateTimeKind.Local).AddTicks(5089), false, null, "09106966244", "saving Box " },
+                    { 3L, new DateTime(2024, 3, 11, 18, 7, 27, 378, DateTimeKind.Local).AddTicks(5095), false, null, "09106966244", "loan Box " }
                 });
 
             migrationBuilder.CreateIndex(

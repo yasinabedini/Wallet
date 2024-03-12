@@ -20,7 +20,6 @@
 
   <ItemGroup>
     <Folder Include="Models\Transaction\Commands\" />
-    <Folder Include="Models\Transaction\Queries\" />
   </ItemGroup>
 
 </Project>

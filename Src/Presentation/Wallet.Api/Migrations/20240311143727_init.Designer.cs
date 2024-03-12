@@ -12,7 +12,7 @@ using Wallet.Infra.Contexts;
 namespace Wallet.Api.Migrations
 {
     [DbContext(typeof(WalletDbContext))]
-    [Migration("20240310182151_init")]
+    [Migration("20240311143727_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -41,6 +41,9 @@ namespace Wallet.Api.Migrations
                         .HasMaxLength(500)
                         .HasColumnType("nvarchar(500)");
 
+                    b.Property<long?>("DestinationWalletId")
+                        .HasColumnType("bigint");
+
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
 
@@ -50,8 +53,16 @@ namespace Wallet.Api.Migrations
                     b.Property<int>("Price")
                         .HasColumnType("int");
 
-                    b.Property<int>("Type")
-                        .HasColumnType("int");
+                    b.Property<string>("Reason")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long?>("SourceWalletId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("Type")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<long>("WalletId")
                         .HasColumnType("bigint");
@@ -73,6 +84,11 @@ namespace Wallet.Api.Migrations
 
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bit")
+                        .HasDefaultValue(true);
 
                     b.Property<bool>("IsDelete")
                         .HasColumnType("bit");
@@ -103,7 +119,8 @@ namespace Wallet.Api.Migrations
                         new
                         {
                             Id = 1L,
-                            CreateAt = new DateTime(2024, 3, 10, 21, 51, 51, 695, DateTimeKind.Local).AddTicks(4936),
+                            CreateAt = new DateTime(2024, 3, 11, 18, 7, 27, 378, DateTimeKind.Local).AddTicks(5056),
+                            IsActive = false,
                             IsDelete = false,
                             PhoneNumber = "09106966244",
                             WalletBalance = 0,
@@ -112,7 +129,8 @@ namespace Wallet.Api.Migrations
                         new
                         {
                             Id = 2L,
-                            CreateAt = new DateTime(2024, 3, 10, 21, 51, 51, 695, DateTimeKind.Local).AddTicks(4961),
+                            CreateAt = new DateTime(2024, 3, 11, 18, 7, 27, 378, DateTimeKind.Local).AddTicks(5089),
+                            IsActive = false,
                             IsDelete = false,
                             PhoneNumber = "09106966244",
                             WalletBalance = 0,
@@ -121,7 +139,8 @@ namespace Wallet.Api.Migrations
                         new
                         {
                             Id = 3L,
-                            CreateAt = new DateTime(2024, 3, 10, 21, 51, 51, 695, DateTimeKind.Local).AddTicks(4967),
+                            CreateAt = new DateTime(2024, 3, 11, 18, 7, 27, 378, DateTimeKind.Local).AddTicks(5095),
+                            IsActive = false,
                             IsDelete = false,
                             PhoneNumber = "09106966244",
                             WalletBalance = 0,
