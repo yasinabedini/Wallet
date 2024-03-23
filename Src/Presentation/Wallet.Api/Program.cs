@@ -17,7 +17,28 @@ try
     builder.Host.UseSerilog((ctx, lc) =>
     lc.WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}")
     .WriteTo.File("log.txt", rollingInterval: RollingInterval.Day)
-    .ReadFrom.Configuration(ctx.Configuration)); 
+    .Enrich.FromLogContext()
+    .ReadFrom.Configuration(ctx.Configuration));
+    #endregion
+
+    #region AA
+
+    builder.Services.AddAuthentication("Bearer").AddJwtBearer("Bearer", j =>
+    {
+        j.Authority = "https://localhost:5001/";
+        j.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+        {
+            ValidateAudience = false
+        };
+    });
+
+    builder.Services.AddAuthorization(c =>
+    {
+        c.AddPolicy("myPolicy", c =>
+        {
+            c.RequireClaim("scope", "walletapi");
+        });
+    });
     #endregion
 
     // Add services to the container.
@@ -37,9 +58,10 @@ try
 
     app.UseHttpsRedirection();
 
+    app.UseAuthentication();
     app.UseAuthorization();
 
-    app.MapControllers();
+    app.MapControllers().RequireAuthorization("myPolicy");
 
     app.Run();
 }

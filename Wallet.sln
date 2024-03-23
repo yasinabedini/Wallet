@@ -25,6 +25,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framework", "Framework\Fram
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wallet.Infra", "Src\Infra\Wallet.Infra\Wallet.Infra.csproj", "{15218F5D-93BB-4103-8769-CB24FE62CA3E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity-Provider", "Identity-Provider", "{DA0518C5-61CD-42C8-BD4F-2F32745A7ADC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Identity-Provider", "Identity-Provider\Identity-Provider\Identity-Provider.csproj", "{6122C0A8-1D47-4BD4-B5B6-835878D51328}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,10 @@ Global
 		{15218F5D-93BB-4103-8769-CB24FE62CA3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15218F5D-93BB-4103-8769-CB24FE62CA3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15218F5D-93BB-4103-8769-CB24FE62CA3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6122C0A8-1D47-4BD4-B5B6-835878D51328}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6122C0A8-1D47-4BD4-B5B6-835878D51328}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6122C0A8-1D47-4BD4-B5B6-835878D51328}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6122C0A8-1D47-4BD4-B5B6-835878D51328}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,6 +73,7 @@ Global
 		{961F9664-5CA3-481D-A537-4B60475ED6AA} = {03E19FCF-3FDA-4996-B226-14ED6B227AE5}
 		{3CB0688C-2B57-420A-9D7F-E4A27E008FEF} = {8C9B6002-4A83-42E9-8279-F388A2D36E16}
 		{15218F5D-93BB-4103-8769-CB24FE62CA3E} = {EB84FA97-0E1E-4EB9-8185-F2D748AA1802}
+		{6122C0A8-1D47-4BD4-B5B6-835878D51328} = {DA0518C5-61CD-42C8-BD4F-2F32745A7ADC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DDBED133-CD8E-41DA-9098-4A1A99E33348}
