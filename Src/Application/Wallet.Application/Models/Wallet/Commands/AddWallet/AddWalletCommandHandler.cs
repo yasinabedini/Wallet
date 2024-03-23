@@ -1,4 +1,5 @@
 ﻿using Framework.Commands;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace Wallet.Application.Models.Wallet.Commands.AddWallet
         {
             _repository.Add(new Domain.Models.Wallet.Entities.Wallet(request.Title, request.PhoneNumber));
             _repository.Save();
-
+            Log.Information($"a wallet created successfully for this phonenumber ({request.PhoneNumber})");
             return Task.CompletedTask;
         }
     }

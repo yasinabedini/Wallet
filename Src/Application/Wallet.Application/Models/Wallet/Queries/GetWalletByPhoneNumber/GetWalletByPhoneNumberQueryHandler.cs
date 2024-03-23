@@ -1,4 +1,5 @@
 ﻿using Framework.Queries;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,7 @@ namespace Wallet.Application.Models.Wallet.Queries.GetWalletByPhoneNumber
         public Task<PagedData<WalletResult>> Handle(GetWalletByPhoneNumberQuery request, CancellationToken cancellationToken)
         {
             var Wallets = _repository.GetList().Where(t => t.PhoneNumber.Value == request.PhoneNumber).Skip(request.SkipCount).Take(request.PageSize);
+            Log.Information($"List of wallets with phonenumber ({request.PageNumber}) successfully retrieved");
             return Task.FromResult(new PagedData<WalletResult> { QueryResult = Wallets.Select(t => new WalletResult(t.Id, t.WalletTitle.Value, t.PhoneNumber.Value, t.WalletBalance)).ToList(), PageNumber = request.PageNumber, PageSize = request.PageSize });
         }
     }

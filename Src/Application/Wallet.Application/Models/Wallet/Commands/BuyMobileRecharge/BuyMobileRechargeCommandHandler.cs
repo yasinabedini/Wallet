@@ -1,4 +1,5 @@
 ﻿using Framework.Commands;
+using Serilog;
 using Wallet.Domain.Models.Transaction.Enums;
 using Wallet.Domain.Models.Transaction.Repositories;
 using Wallet.Domain.Models.Wallet.Repositories;
@@ -26,7 +27,7 @@ namespace Wallet.Application.Models.Wallet.Commands.BuyMobileRecharge
             wallet.DecreaseWalletBalance(request.RechargeAmount);
             _repository.Update(wallet);
             _repository.Save();
-
+            Log.Information(message);
             return Task.FromResult(message);
         }
     }

@@ -1,4 +1,5 @@
 ﻿using Framework.Commands;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,7 @@ public class ActivateWalletCommandHandler : ICommandHandler<ActivateWalletComman
         wallet.Activate();
         _repository.Update(wallet);
         _repository.Save();
-
+        Log.Information($"wallet by Id ({request.WalletId}) Activated successfully.");
         return Task.CompletedTask;
     }
 }

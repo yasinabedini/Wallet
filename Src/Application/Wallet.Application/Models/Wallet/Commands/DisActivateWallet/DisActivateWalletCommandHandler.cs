@@ -1,4 +1,5 @@
 ﻿using Framework.Commands;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace Wallet.Application.Models.Wallet.Commands.DisActivateWallet
             wallet.DisActivate();
             _repository.Update(wallet);
             _repository.Save();
-
+            Log.Information($"wallet by Id ({request.WalletId}) disabled successfully.");
             return Task.CompletedTask;
         }
     }

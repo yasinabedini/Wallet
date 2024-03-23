@@ -1,5 +1,6 @@
 ﻿using Framework.Commands;
 using MediatR;
+using Serilog;
 using Wallet.Application.Models.Wallet.Commands.RechargeWallet;
 using Wallet.Application.Models.Wallet.Commands.WithdrawFromWallet;
 using Wallet.Domain.Models.Transaction.Enums;
@@ -37,7 +38,8 @@ public class TransferMoneyCommandHandler : ICommandHandler<TransferMoneyCommand,
             destinationWalletModel.IncreaseWalletBalance(destinationWallet.Item2);            
             _repository.Save();
         }
-        
-        return Task.FromResult("The transfer was successful.");
+        string message = $"{destinationAmount} Tomans money was withdrawn from wallet ({request.SourceWalletId}) and deposited into some wallets";
+        Log.Information(message);
+        return Task.FromResult(message);
     }    
 }

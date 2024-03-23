@@ -1,4 +1,5 @@
 ﻿using Framework.Commands;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,7 @@ namespace Wallet.Application.Models.Wallet.Commands.PayingBill
             wallet.DecreaseWalletBalance(request.BillAmount);
             _repository.Update(wallet);
             _repository.Save();
-
+            Log.Information(message);
             return Task.FromResult(message);
         }
     }

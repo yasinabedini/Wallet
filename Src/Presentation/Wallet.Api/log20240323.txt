@@ -139,3 +139,123 @@ WHERE [w].[IsDelete] = CAST(0 AS bit)
 2024-03-23 11:31:12.315 +03:30 [INF] Executed action Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api) in 2410.7473ms
 2024-03-23 11:31:12.317 +03:30 [INF] Executed endpoint 'Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api)'
 2024-03-23 11:31:12.347 +03:30 [INF] Request finished HTTP/2 POST https://localhost:7209/api/Wallet/GetAll application/json 130 - 200 - application/json;+charset=utf-8 2524.4475ms
+2024-03-23 11:45:33.135 +03:30 [INF] Now listening on: https://localhost:7209
+2024-03-23 11:45:33.177 +03:30 [INF] Now listening on: http://localhost:5196
+2024-03-23 11:45:33.183 +03:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-23 11:45:33.186 +03:30 [INF] Hosting environment: Development
+2024-03-23 11:45:33.187 +03:30 [INF] Content root path: C:\Users\PIXEL SHOP\source\repos\Wallet\Src\Presentation\Wallet.Api
+2024-03-23 11:45:35.209 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/swagger/index.html - -
+2024-03-23 11:45:35.770 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/swagger/index.html - - - 200 - text/html;charset=utf-8 565.6107ms
+2024-03-23 11:45:35.839 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/_framework/aspnetcore-browser-refresh.js - -
+2024-03-23 11:45:35.839 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/_vs/browserLink - -
+2024-03-23 11:45:35.853 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/_framework/aspnetcore-browser-refresh.js - - - 200 13756 application/javascript;+charset=utf-8 14.5822ms
+2024-03-23 11:45:35.974 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 134.4999ms
+2024-03-23 11:45:36.121 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/swagger/v1/swagger.json - -
+2024-03-23 11:45:36.365 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 244.0574ms
+2024-03-23 11:46:06.175 +03:30 [INF] Request starting HTTP/2 POST https://localhost:7209/api/Wallet/WithdrawFromWallet application/json 37
+2024-03-23 11:46:06.227 +03:30 [INF] Executing endpoint 'Wallet.Api.Controllers.WalletController.WithdrawFromWallet (Wallet.Api)'
+2024-03-23 11:46:06.268 +03:30 [INF] Route matched with {action = "WithdrawFromWallet", controller = "Wallet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult WithdrawFromWallet(Wallet.Application.Models.Wallet.Commands.WithdrawFromWallet.WithdrawFromWalletCommand) on controller Wallet.Api.Controllers.WalletController (Wallet.Api).
+2024-03-23 11:46:06.410 +03:30 [INF] Executing action method Wallet.Api.Controllers.WalletController.WithdrawFromWallet (Wallet.Api) - Validation state: "Valid"
+2024-03-23 11:46:07.380 +03:30 [WRN] The 'bool' property 'IsActive' on entity type 'Wallet' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-03-23 11:46:08.360 +03:30 [INF] Executed DbCommand (43ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [w].[Id], [w].[CreateAt], [w].[IsActive], [w].[IsDelete], [w].[ModifiedAt], [w].[PhoneNumber], [w].[WalletBalance], [w].[WalletTitle]
+FROM [Wallets] AS [w]
+WHERE [w].[IsDelete] = CAST(0 AS bit) AND [w].[Id] = @__p_0
+2024-03-23 11:46:08.473 +03:30 [INF] Executed action method Wallet.Api.Controllers.WalletController.WithdrawFromWallet (Wallet.Api), returned result Microsoft.AspNetCore.Mvc.ContentResult in 2053.8664ms.
+2024-03-23 11:46:08.478 +03:30 [INF] Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+2024-03-23 11:46:08.489 +03:30 [INF] Executed action Wallet.Api.Controllers.WalletController.WithdrawFromWallet (Wallet.Api) in 2212.9391ms
+2024-03-23 11:46:08.491 +03:30 [INF] Executed endpoint 'Wallet.Api.Controllers.WalletController.WithdrawFromWallet (Wallet.Api)'
+2024-03-23 11:46:08.506 +03:30 [INF] Request finished HTTP/2 POST https://localhost:7209/api/Wallet/WithdrawFromWallet application/json 37 - 406 26 text/plain;+charset=utf-8 2330.8240ms
+2024-03-23 11:46:24.547 +03:30 [INF] Request starting HTTP/2 POST https://localhost:7209/api/Wallet/WithdrawFromWallet application/json 37
+2024-03-23 11:46:24.553 +03:30 [INF] Executing endpoint 'Wallet.Api.Controllers.WalletController.WithdrawFromWallet (Wallet.Api)'
+2024-03-23 11:46:24.555 +03:30 [INF] Route matched with {action = "WithdrawFromWallet", controller = "Wallet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult WithdrawFromWallet(Wallet.Application.Models.Wallet.Commands.WithdrawFromWallet.WithdrawFromWalletCommand) on controller Wallet.Api.Controllers.WalletController (Wallet.Api).
+2024-03-23 11:46:24.591 +03:30 [INF] Executing action method Wallet.Api.Controllers.WalletController.WithdrawFromWallet (Wallet.Api) - Validation state: "Valid"
+2024-03-23 11:46:24.676 +03:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [w].[Id], [w].[CreateAt], [w].[IsActive], [w].[IsDelete], [w].[ModifiedAt], [w].[PhoneNumber], [w].[WalletBalance], [w].[WalletTitle]
+FROM [Wallets] AS [w]
+WHERE [w].[IsDelete] = CAST(0 AS bit) AND [w].[Id] = @__p_0
+2024-03-23 11:46:24.680 +03:30 [INF] Executed action method Wallet.Api.Controllers.WalletController.WithdrawFromWallet (Wallet.Api), returned result Microsoft.AspNetCore.Mvc.ContentResult in 87.2207ms.
+2024-03-23 11:46:24.682 +03:30 [INF] Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+2024-03-23 11:46:24.684 +03:30 [INF] Executed action Wallet.Api.Controllers.WalletController.WithdrawFromWallet (Wallet.Api) in 126.3438ms
+2024-03-23 11:46:24.686 +03:30 [INF] Executed endpoint 'Wallet.Api.Controllers.WalletController.WithdrawFromWallet (Wallet.Api)'
+2024-03-23 11:46:24.687 +03:30 [INF] Request finished HTTP/2 POST https://localhost:7209/api/Wallet/WithdrawFromWallet application/json 37 - 406 26 text/plain;+charset=utf-8 140.1284ms
+2024-03-23 11:46:32.826 +03:30 [INF] Request starting HTTP/2 POST https://localhost:7209/api/Wallet/WithdrawFromWallet application/json 37
+2024-03-23 11:46:32.827 +03:30 [INF] Executing endpoint 'Wallet.Api.Controllers.WalletController.WithdrawFromWallet (Wallet.Api)'
+2024-03-23 11:46:32.841 +03:30 [INF] Route matched with {action = "WithdrawFromWallet", controller = "Wallet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult WithdrawFromWallet(Wallet.Application.Models.Wallet.Commands.WithdrawFromWallet.WithdrawFromWalletCommand) on controller Wallet.Api.Controllers.WalletController (Wallet.Api).
+2024-03-23 11:46:32.884 +03:30 [INF] Executing action method Wallet.Api.Controllers.WalletController.WithdrawFromWallet (Wallet.Api) - Validation state: "Valid"
+2024-03-23 11:46:32.906 +03:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [w].[Id], [w].[CreateAt], [w].[IsActive], [w].[IsDelete], [w].[ModifiedAt], [w].[PhoneNumber], [w].[WalletBalance], [w].[WalletTitle]
+FROM [Wallets] AS [w]
+WHERE [w].[IsDelete] = CAST(0 AS bit) AND [w].[Id] = @__p_0
+2024-03-23 11:46:32.911 +03:30 [INF] Executed action method Wallet.Api.Controllers.WalletController.WithdrawFromWallet (Wallet.Api), returned result Microsoft.AspNetCore.Mvc.ContentResult in 25.1602ms.
+2024-03-23 11:46:32.913 +03:30 [INF] Executing ContentResult with HTTP Response ContentType of text/plain; charset=utf-8
+2024-03-23 11:46:32.915 +03:30 [INF] Executed action Wallet.Api.Controllers.WalletController.WithdrawFromWallet (Wallet.Api) in 66.4364ms
+2024-03-23 11:46:32.917 +03:30 [INF] Executed endpoint 'Wallet.Api.Controllers.WalletController.WithdrawFromWallet (Wallet.Api)'
+2024-03-23 11:46:32.918 +03:30 [INF] Request finished HTTP/2 POST https://localhost:7209/api/Wallet/WithdrawFromWallet application/json 37 - 406 26 text/plain;+charset=utf-8 92.2681ms
+2024-03-23 11:46:43.730 +03:30 [INF] Request starting HTTP/2 POST https://localhost:7209/api/Wallet/GetAll application/json 130
+2024-03-23 11:46:43.731 +03:30 [INF] Executing endpoint 'Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api)'
+2024-03-23 11:46:43.738 +03:30 [INF] Route matched with {action = "GetAllWallets", controller = "Wallet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllWallets(Wallet.Application.Models.Wallet.Queries.GetWallets.GetWalletsQuery) on controller Wallet.Api.Controllers.WalletController (Wallet.Api).
+2024-03-23 11:46:43.793 +03:30 [INF] Executing action method Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api) - Validation state: "Valid"
+2024-03-23 11:46:43.796 +03:30 [INF] User with ip (0.0.0.1) Executed GetAllWallets
+2024-03-23 11:46:43.811 +03:30 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[CreateAt], [w].[IsActive], [w].[IsDelete], [w].[ModifiedAt], [w].[PhoneNumber], [w].[WalletBalance], [w].[WalletTitle]
+FROM [Wallets] AS [w]
+WHERE [w].[IsDelete] = CAST(0 AS bit)
+2024-03-23 11:46:43.817 +03:30 [INF] Executed action method Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 23.1428ms.
+2024-03-23 11:46:43.824 +03:30 [INF] Executing OkObjectResult, writing value of type 'Framework.Queries.PagedData`1[[Wallet.Application.Models.Wallet.Queries.Common.WalletResult, Wallet.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-23 11:46:43.848 +03:30 [INF] Executed action Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api) in 108.5778ms
+2024-03-23 11:46:43.851 +03:30 [INF] Executed endpoint 'Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api)'
+2024-03-23 11:46:43.852 +03:30 [INF] Request finished HTTP/2 POST https://localhost:7209/api/Wallet/GetAll application/json 130 - 200 - application/json;+charset=utf-8 122.5234ms
+2024-03-23 11:47:20.494 +03:30 [INF] Request starting HTTP/2 POST https://localhost:7209/api/Wallet/RechargeWallet application/json 38
+2024-03-23 11:47:20.498 +03:30 [INF] Executing endpoint 'Wallet.Api.Controllers.WalletController.RechargeWallet (Wallet.Api)'
+2024-03-23 11:47:20.504 +03:30 [INF] Route matched with {action = "RechargeWallet", controller = "Wallet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult RechargeWallet(Wallet.Application.Models.Wallet.Commands.RechargeWallet.RechargeWalletCommand) on controller Wallet.Api.Controllers.WalletController (Wallet.Api).
+2024-03-23 11:47:20.538 +03:30 [INF] Executing action method Wallet.Api.Controllers.WalletController.RechargeWallet (Wallet.Api) - Validation state: "Valid"
+2024-03-23 11:47:20.555 +03:30 [INF] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [w].[Id], [w].[CreateAt], [w].[IsActive], [w].[IsDelete], [w].[ModifiedAt], [w].[PhoneNumber], [w].[WalletBalance], [w].[WalletTitle]
+FROM [Wallets] AS [w]
+WHERE [w].[IsDelete] = CAST(0 AS bit) AND [w].[Id] = @__p_0
+2024-03-23 11:47:20.557 +03:30 [INF] User with ip (0.0.0.1) Executed RechargeWallet(1)
+2024-03-23 11:47:20.776 +03:30 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 500), @p2='?' (DbType = Int64), @p3='?' (DbType = Boolean), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = Int64), @p8='?' (Size = 4000), @p9='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Transactions] ([CreateAt], [Description], [DestinationWalletId], [IsDelete], [ModifiedAt], [Price], [Reason], [SourceWalletId], [Type], [WalletId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2024-03-23 11:47:20.820 +03:30 [INF] Executed DbCommand (4ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (DbType = Boolean), @p3='?' (DbType = DateTime2), @p4='?' (Size = 13), @p5='?' (DbType = Int32), @p6='?' (Size = 250)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Wallets] SET [CreateAt] = @p0, [IsActive] = @p1, [IsDelete] = @p2, [ModifiedAt] = @p3, [PhoneNumber] = @p4, [WalletBalance] = @p5, [WalletTitle] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2024-03-23 11:47:20.824 +03:30 [INF] Executed action method Wallet.Api.Controllers.WalletController.RechargeWallet (Wallet.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 285.0486ms.
+2024-03-23 11:47:20.827 +03:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-03-23 11:47:20.828 +03:30 [INF] Executed action Wallet.Api.Controllers.WalletController.RechargeWallet (Wallet.Api) in 321.5993ms
+2024-03-23 11:47:20.842 +03:30 [INF] Executed endpoint 'Wallet.Api.Controllers.WalletController.RechargeWallet (Wallet.Api)'
+2024-03-23 11:47:20.843 +03:30 [INF] Request finished HTTP/2 POST https://localhost:7209/api/Wallet/RechargeWallet application/json 38 - 200 - text/plain;+charset=utf-8 349.1581ms
+2024-03-23 11:47:37.209 +03:30 [INF] Request starting HTTP/2 POST https://localhost:7209/api/Wallet/WithdrawFromWallet application/json 37
+2024-03-23 11:47:37.210 +03:30 [INF] Executing endpoint 'Wallet.Api.Controllers.WalletController.WithdrawFromWallet (Wallet.Api)'
+2024-03-23 11:47:37.228 +03:30 [INF] Route matched with {action = "WithdrawFromWallet", controller = "Wallet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult WithdrawFromWallet(Wallet.Application.Models.Wallet.Commands.WithdrawFromWallet.WithdrawFromWalletCommand) on controller Wallet.Api.Controllers.WalletController (Wallet.Api).
+2024-03-23 11:47:37.270 +03:30 [INF] Executing action method Wallet.Api.Controllers.WalletController.WithdrawFromWallet (Wallet.Api) - Validation state: "Valid"
+2024-03-23 11:47:37.276 +03:30 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [w].[Id], [w].[CreateAt], [w].[IsActive], [w].[IsDelete], [w].[ModifiedAt], [w].[PhoneNumber], [w].[WalletBalance], [w].[WalletTitle]
+FROM [Wallets] AS [w]
+WHERE [w].[IsDelete] = CAST(0 AS bit) AND [w].[Id] = @__p_0
+2024-03-23 11:47:37.279 +03:30 [INF] User with ip (0.0.0.1) Executed WithdrawFromWallet(1)
+2024-03-23 11:47:37.289 +03:30 [INF] Executed DbCommand (3ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (Size = 500), @p2='?' (DbType = Int64), @p3='?' (DbType = Boolean), @p4='?' (DbType = DateTime2), @p5='?' (DbType = Int32), @p6='?' (Size = 4000), @p7='?' (DbType = Int64), @p8='?' (Size = 4000), @p9='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Transactions] ([CreateAt], [Description], [DestinationWalletId], [IsDelete], [ModifiedAt], [Price], [Reason], [SourceWalletId], [Type], [WalletId])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+2024-03-23 11:47:37.302 +03:30 [INF] Executed DbCommand (7ms) [Parameters=[@p7='?' (DbType = Int64), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (DbType = Boolean), @p3='?' (DbType = DateTime2), @p4='?' (Size = 13), @p5='?' (DbType = Int32), @p6='?' (Size = 250)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Wallets] SET [CreateAt] = @p0, [IsActive] = @p1, [IsDelete] = @p2, [ModifiedAt] = @p3, [PhoneNumber] = @p4, [WalletBalance] = @p5, [WalletTitle] = @p6
+OUTPUT 1
+WHERE [Id] = @p7;
+2024-03-23 11:47:37.306 +03:30 [ERR] test
+2024-03-23 11:47:37.307 +03:30 [INF] Executed action method Wallet.Api.Controllers.WalletController.WithdrawFromWallet (Wallet.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 35.7492ms.
+2024-03-23 11:47:37.309 +03:30 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2024-03-23 11:47:37.311 +03:30 [INF] Executed action Wallet.Api.Controllers.WalletController.WithdrawFromWallet (Wallet.Api) in 73.8221ms
+2024-03-23 11:47:37.312 +03:30 [INF] Executed endpoint 'Wallet.Api.Controllers.WalletController.WithdrawFromWallet (Wallet.Api)'
+2024-03-23 11:47:37.314 +03:30 [INF] Request finished HTTP/2 POST https://localhost:7209/api/Wallet/WithdrawFromWallet application/json 37 - 200 - text/plain;+charset=utf-8 104.7031ms

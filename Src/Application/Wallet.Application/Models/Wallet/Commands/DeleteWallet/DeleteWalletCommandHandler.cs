@@ -1,4 +1,5 @@
 ﻿using Framework.Commands;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace Wallet.Application.Models.Wallet.Commands.DeleteWallet
         {
             _repository.Delete(request.WalletId);
             _repository.Save();
-
+            Log.Information($"wallet by Id ({request.WalletId}) Deleted successfully.");
             return Task.CompletedTask;
         }
     }
