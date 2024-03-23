@@ -1,4 +1,5 @@
 ﻿using Framework.Queries;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace Wallet.Application.Models.Transaction.Queries.GetTransaction
         public Task<TransactionResult> Handle(GetTransactionQuery request, CancellationToken cancellationToken)
         {
             var transaction = _repository.GetById(request.Id);
-
+            Log.Information($"transaction information ({request.Id}) successfully retrieved");
             return Task.FromResult(new TransactionResult(transaction.Id, transaction.WalletId, transaction.Price, transaction.Type.Value, transaction.Reason.Value, transaction.Description.Value, transaction.SourceWalletId, transaction.DestinationWalletId));
         }
     }

@@ -1,4 +1,5 @@
 ﻿using Framework.Queries;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace Wallet.Application.Models.Transaction.Queries.GetTransactions
         public Task<PagedData<TransactionResult>> Handle(GetTransactionsQuery request, CancellationToken cancellationToken)
         {
             var transactions = _repository.GetList().Skip(request.SkipCount).Take(request.PageSize).ToList();
-
+            Log.Information("List of transactions successfully retrieved");
             return Task.FromResult(new PagedData<TransactionResult> { PageNumber = request.PageNumber, PageSize = request.PageSize, QueryResult = transactions.Select(t => new TransactionResult(t.Id, t.WalletId, t.Price, t.Type.ToString(), t.Reason.ToString(), t.Description.ToString(), t.SourceWalletId, t.DestinationWalletId)).ToList() });
         }
     }
