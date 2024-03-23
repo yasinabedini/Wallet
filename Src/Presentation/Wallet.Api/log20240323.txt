@@ -1,0 +1,141 @@
+2024-03-23 11:21:20.347 +03:30 [INF] Now listening on: https://localhost:7209
+2024-03-23 11:21:20.388 +03:30 [INF] Now listening on: http://localhost:5196
+2024-03-23 11:21:20.398 +03:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-23 11:21:20.400 +03:30 [INF] Hosting environment: Development
+2024-03-23 11:21:20.401 +03:30 [INF] Content root path: C:\Users\PIXEL SHOP\source\repos\Wallet\Src\Presentation\Wallet.Api
+2024-03-23 11:21:28.806 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/swagger - -
+2024-03-23 11:21:29.910 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/swagger - - - 301 0 - 1109.6222ms
+2024-03-23 11:21:29.932 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/swagger/index.html - -
+2024-03-23 11:21:30.305 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/swagger/index.html - - - 200 - text/html;charset=utf-8 373.2236ms
+2024-03-23 11:21:30.367 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/swagger/swagger-ui-bundle.js - -
+2024-03-23 11:21:30.368 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/swagger/swagger-ui-standalone-preset.js - -
+2024-03-23 11:21:30.368 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/_framework/aspnetcore-browser-refresh.js - -
+2024-03-23 11:21:30.365 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/swagger/swagger-ui.css - -
+2024-03-23 11:21:30.406 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/_framework/aspnetcore-browser-refresh.js - - - 200 13756 application/javascript;+charset=utf-8 37.9045ms
+2024-03-23 11:21:30.518 +03:30 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-03-23 11:21:30.518 +03:30 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-03-23 11:21:30.530 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/swagger/swagger-ui-standalone-preset.js - - - 200 312163 text/javascript 162.7003ms
+2024-03-23 11:21:30.525 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/swagger/swagger-ui.css - - - 200 144929 text/css 159.7185ms
+2024-03-23 11:21:30.546 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/_vs/browserLink - -
+2024-03-23 11:21:30.582 +03:30 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-03-23 11:21:30.596 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/swagger/swagger-ui-bundle.js - - - 200 1061536 text/javascript 228.8544ms
+2024-03-23 11:21:30.684 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 138.3733ms
+2024-03-23 11:21:30.944 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/swagger/v1/swagger.json - -
+2024-03-23 11:21:30.980 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/swagger/favicon-32x32.png - -
+2024-03-23 11:21:31.052 +03:30 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-03-23 11:21:31.055 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/swagger/favicon-32x32.png - - - 200 628 image/png 74.6940ms
+2024-03-23 11:21:31.258 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 314.2310ms
+2024-03-23 11:21:55.392 +03:30 [INF] Request starting HTTP/2 POST https://localhost:7209/api/Wallet/GetAll application/json 130
+2024-03-23 11:21:55.409 +03:30 [INF] Executing endpoint 'Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api)'
+2024-03-23 11:21:55.466 +03:30 [INF] Route matched with {action = "GetAllWallets", controller = "Wallet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllWallets(Wallet.Application.Models.Wallet.Queries.GetWallets.GetWalletsQuery) on controller Wallet.Api.Controllers.WalletController (Wallet.Api).
+2024-03-23 11:23:07.706 +03:30 [INF] Now listening on: https://localhost:7209
+2024-03-23 11:23:07.736 +03:30 [INF] Now listening on: http://localhost:5196
+2024-03-23 11:23:07.742 +03:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-23 11:23:07.744 +03:30 [INF] Hosting environment: Development
+2024-03-23 11:23:07.746 +03:30 [INF] Content root path: C:\Users\PIXEL SHOP\source\repos\Wallet\Src\Presentation\Wallet.Api
+2024-03-23 11:23:16.475 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/swagger/index.html - -
+2024-03-23 11:23:17.091 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/swagger/index.html - - - 200 - text/html;charset=utf-8 618.6169ms
+2024-03-23 11:23:17.173 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/_framework/aspnetcore-browser-refresh.js - -
+2024-03-23 11:23:17.174 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/_vs/browserLink - -
+2024-03-23 11:23:17.194 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/_framework/aspnetcore-browser-refresh.js - - - 200 13756 application/javascript;+charset=utf-8 21.5841ms
+2024-03-23 11:23:17.330 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 155.6304ms
+2024-03-23 11:23:17.615 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/swagger/v1/swagger.json - -
+2024-03-23 11:23:17.908 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 293.0030ms
+2024-03-23 11:23:33.754 +03:30 [INF] Request starting HTTP/2 POST https://localhost:7209/api/Wallet/GetAll application/json 130
+2024-03-23 11:23:33.772 +03:30 [INF] Executing endpoint 'Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api)'
+2024-03-23 11:23:33.811 +03:30 [INF] Route matched with {action = "GetAllWallets", controller = "Wallet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllWallets(Wallet.Application.Models.Wallet.Queries.GetWallets.GetWalletsQuery) on controller Wallet.Api.Controllers.WalletController (Wallet.Api).
+2024-03-23 11:23:33.967 +03:30 [INF] Executing action method Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api) - Validation state: "Valid"
+2024-03-23 11:24:04.588 +03:30 [INF] User with ip (0.0.0.1) Executed GetAllWallets
+2024-03-23 11:24:05.809 +03:30 [WRN] The 'bool' property 'IsActive' on entity type 'Wallet' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-03-23 11:24:06.943 +03:30 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[CreateAt], [w].[IsActive], [w].[IsDelete], [w].[ModifiedAt], [w].[PhoneNumber], [w].[WalletBalance], [w].[WalletTitle]
+FROM [Wallets] AS [w]
+WHERE [w].[IsDelete] = CAST(0 AS bit)
+2024-03-23 11:24:07.057 +03:30 [INF] Executed action method Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 33081.7079ms.
+2024-03-23 11:24:07.065 +03:30 [INF] Executing OkObjectResult, writing value of type 'Framework.Queries.PagedData`1[[Wallet.Application.Models.Wallet.Queries.Common.WalletResult, Wallet.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-23 11:24:07.107 +03:30 [INF] Executed action Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api) in 33289.1304ms
+2024-03-23 11:24:07.108 +03:30 [INF] Executed endpoint 'Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api)'
+2024-03-23 11:24:07.125 +03:30 [INF] Request finished HTTP/2 POST https://localhost:7209/api/Wallet/GetAll application/json 130 - 200 - application/json;+charset=utf-8 33370.7643ms
+2024-03-23 11:26:35.432 +03:30 [INF] Now listening on: https://localhost:7209
+2024-03-23 11:26:35.464 +03:30 [INF] Now listening on: http://localhost:5196
+2024-03-23 11:26:35.469 +03:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-23 11:26:35.472 +03:30 [INF] Hosting environment: Development
+2024-03-23 11:26:35.473 +03:30 [INF] Content root path: C:\Users\PIXEL SHOP\source\repos\Wallet\Src\Presentation\Wallet.Api
+2024-03-23 11:26:41.111 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/swagger/index.html - -
+2024-03-23 11:26:41.761 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/swagger/index.html - - - 200 - text/html;charset=utf-8 654.8944ms
+2024-03-23 11:26:41.890 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/_framework/aspnetcore-browser-refresh.js - -
+2024-03-23 11:26:41.919 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/_vs/browserLink - -
+2024-03-23 11:26:42.003 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/_framework/aspnetcore-browser-refresh.js - - - 200 13756 application/javascript;+charset=utf-8 114.1405ms
+2024-03-23 11:26:42.100 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 181.0109ms
+2024-03-23 11:26:42.236 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/swagger/v1/swagger.json - -
+2024-03-23 11:26:42.482 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 246.4575ms
+2024-03-23 11:27:05.910 +03:30 [INF] Request starting HTTP/2 POST https://localhost:7209/api/Transaction/GetAllTransaction application/json 130
+2024-03-23 11:27:05.936 +03:30 [INF] Executing endpoint 'Wallet.Api.Controllers.TransactionController.GetAll (Wallet.Api)'
+2024-03-23 11:27:05.984 +03:30 [INF] Route matched with {action = "GetAll", controller = "Transaction"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAll(Wallet.Application.Models.Transaction.Queries.GetTransactions.GetTransactionsQuery) on controller Wallet.Api.Controllers.TransactionController (Wallet.Api).
+2024-03-23 11:27:06.150 +03:30 [INF] Executing action method Wallet.Api.Controllers.TransactionController.GetAll (Wallet.Api) - Validation state: "Valid"
+2024-03-23 11:27:07.191 +03:30 [WRN] The 'bool' property 'IsActive' on entity type 'Wallet' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-03-23 11:27:08.155 +03:30 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreateAt], [t].[Description], [t].[DestinationWalletId], [t].[IsDelete], [t].[ModifiedAt], [t].[Price], [t].[Reason], [t].[SourceWalletId], [t].[Type], [t].[WalletId]
+FROM [Transactions] AS [t]
+WHERE [t].[IsDelete] = CAST(0 AS bit)
+2024-03-23 11:27:08.279 +03:30 [INF] Executed action method Wallet.Api.Controllers.TransactionController.GetAll (Wallet.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2119.3279ms.
+2024-03-23 11:27:08.288 +03:30 [INF] Executing OkObjectResult, writing value of type 'Framework.Queries.PagedData`1[[Wallet.Application.Models.Transaction.Queries.Common.TransactionResult, Wallet.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-23 11:27:08.331 +03:30 [INF] Executed action Wallet.Api.Controllers.TransactionController.GetAll (Wallet.Api) in 2340.4109ms
+2024-03-23 11:27:08.334 +03:30 [INF] Executed endpoint 'Wallet.Api.Controllers.TransactionController.GetAll (Wallet.Api)'
+2024-03-23 11:27:08.349 +03:30 [INF] Request finished HTTP/2 POST https://localhost:7209/api/Transaction/GetAllTransaction application/json 130 - 200 - application/json;+charset=utf-8 2438.0801ms
+2024-03-23 11:28:07.115 +03:30 [INF] Now listening on: https://localhost:7209
+2024-03-23 11:28:07.146 +03:30 [INF] Now listening on: http://localhost:5196
+2024-03-23 11:28:07.152 +03:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-23 11:28:07.155 +03:30 [INF] Hosting environment: Development
+2024-03-23 11:28:07.157 +03:30 [INF] Content root path: C:\Users\PIXEL SHOP\source\repos\Wallet\Src\Presentation\Wallet.Api
+2024-03-23 11:28:17.194 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/swagger/index.html - -
+2024-03-23 11:28:17.783 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/swagger/index.html - - - 200 - text/html;charset=utf-8 594.0353ms
+2024-03-23 11:28:17.840 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/_framework/aspnetcore-browser-refresh.js - -
+2024-03-23 11:28:17.840 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/_vs/browserLink - -
+2024-03-23 11:28:17.875 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/_framework/aspnetcore-browser-refresh.js - - - 200 13756 application/javascript;+charset=utf-8 35.4855ms
+2024-03-23 11:28:17.961 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 121.3212ms
+2024-03-23 11:28:18.100 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/swagger/v1/swagger.json - -
+2024-03-23 11:28:18.316 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 216.3584ms
+2024-03-23 11:28:42.413 +03:30 [INF] Request starting HTTP/2 POST https://localhost:7209/api/Wallet/GetAll application/json 130
+2024-03-23 11:28:42.454 +03:30 [INF] Executing endpoint 'Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api)'
+2024-03-23 11:28:42.494 +03:30 [INF] Route matched with {action = "GetAllWallets", controller = "Wallet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllWallets(Wallet.Application.Models.Wallet.Queries.GetWallets.GetWalletsQuery) on controller Wallet.Api.Controllers.WalletController (Wallet.Api).
+2024-03-23 11:28:42.646 +03:30 [INF] Executing action method Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api) - Validation state: "Valid"
+2024-03-23 11:28:42.652 +03:30 [ERR] User with ip (0.0.0.1) Executed GetAllWallets
+2024-03-23 11:28:43.674 +03:30 [WRN] The 'bool' property 'IsActive' on entity type 'Wallet' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-03-23 11:28:44.727 +03:30 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[CreateAt], [w].[IsActive], [w].[IsDelete], [w].[ModifiedAt], [w].[PhoneNumber], [w].[WalletBalance], [w].[WalletTitle]
+FROM [Wallets] AS [w]
+WHERE [w].[IsDelete] = CAST(0 AS bit)
+2024-03-23 11:28:44.852 +03:30 [INF] Executed action method Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2197.6678ms.
+2024-03-23 11:28:44.860 +03:30 [INF] Executing OkObjectResult, writing value of type 'Framework.Queries.PagedData`1[[Wallet.Application.Models.Wallet.Queries.Common.WalletResult, Wallet.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-23 11:28:44.898 +03:30 [INF] Executed action Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api) in 2393.8098ms
+2024-03-23 11:28:44.901 +03:30 [INF] Executed endpoint 'Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api)'
+2024-03-23 11:28:44.919 +03:30 [INF] Request finished HTTP/2 POST https://localhost:7209/api/Wallet/GetAll application/json 130 - 200 - application/json;+charset=utf-8 2505.4608ms
+2024-03-23 11:30:22.997 +03:30 [INF] Now listening on: https://localhost:7209
+2024-03-23 11:30:23.025 +03:30 [INF] Now listening on: http://localhost:5196
+2024-03-23 11:30:23.030 +03:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-03-23 11:30:23.032 +03:30 [INF] Hosting environment: Development
+2024-03-23 11:30:23.033 +03:30 [INF] Content root path: C:\Users\PIXEL SHOP\source\repos\Wallet\Src\Presentation\Wallet.Api
+2024-03-23 11:30:33.738 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/swagger/index.html - -
+2024-03-23 11:30:34.229 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/swagger/index.html - - - 200 - text/html;charset=utf-8 493.0364ms
+2024-03-23 11:30:34.295 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/_framework/aspnetcore-browser-refresh.js - -
+2024-03-23 11:30:34.302 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/_vs/browserLink - -
+2024-03-23 11:30:34.318 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/_framework/aspnetcore-browser-refresh.js - - - 200 13756 application/javascript;+charset=utf-8 23.0675ms
+2024-03-23 11:30:34.472 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 170.1407ms
+2024-03-23 11:30:34.598 +03:30 [INF] Request starting HTTP/2 GET https://localhost:7209/swagger/v1/swagger.json - -
+2024-03-23 11:30:34.797 +03:30 [INF] Request finished HTTP/2 GET https://localhost:7209/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 199.4452ms
+2024-03-23 11:31:09.822 +03:30 [INF] Request starting HTTP/2 POST https://localhost:7209/api/Wallet/GetAll application/json 130
+2024-03-23 11:31:09.850 +03:30 [INF] Executing endpoint 'Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api)'
+2024-03-23 11:31:09.897 +03:30 [INF] Route matched with {action = "GetAllWallets", controller = "Wallet"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetAllWallets(Wallet.Application.Models.Wallet.Queries.GetWallets.GetWalletsQuery) on controller Wallet.Api.Controllers.WalletController (Wallet.Api).
+2024-03-23 11:31:10.110 +03:30 [INF] Executing action method Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api) - Validation state: "Valid"
+2024-03-23 11:31:10.116 +03:30 [INF] User with ip (0.0.0.1) Executed GetAllWallets
+2024-03-23 11:31:11.176 +03:30 [WRN] The 'bool' property 'IsActive' on entity type 'Wallet' is configured with a database-generated default. This default will always be used for inserts when the property has the value 'false', since this is the CLR default for the 'bool' type. Consider using the nullable 'bool?' type instead, so that the default will only be used for inserts when the property value is 'null'.
+2024-03-23 11:31:12.157 +03:30 [INF] Executed DbCommand (27ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [w].[Id], [w].[CreateAt], [w].[IsActive], [w].[IsDelete], [w].[ModifiedAt], [w].[PhoneNumber], [w].[WalletBalance], [w].[WalletTitle]
+FROM [Wallets] AS [w]
+WHERE [w].[IsDelete] = CAST(0 AS bit)
+2024-03-23 11:31:12.266 +03:30 [INF] Executed action method Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2146.4806ms.
+2024-03-23 11:31:12.274 +03:30 [INF] Executing OkObjectResult, writing value of type 'Framework.Queries.PagedData`1[[Wallet.Application.Models.Wallet.Queries.Common.WalletResult, Wallet.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-03-23 11:31:12.315 +03:30 [INF] Executed action Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api) in 2410.7473ms
+2024-03-23 11:31:12.317 +03:30 [INF] Executed endpoint 'Wallet.Api.Controllers.WalletController.GetAllWallets (Wallet.Api)'
+2024-03-23 11:31:12.347 +03:30 [INF] Request finished HTTP/2 POST https://localhost:7209/api/Wallet/GetAll application/json 130 - 200 - application/json;+charset=utf-8 2524.4475ms

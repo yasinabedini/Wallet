@@ -1,30 +1,56 @@
-using Microsoft.Extensions.Options;
+using Serilog;
+using Serilog.Formatting;
 using Wallet.Application;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddApplication();
 
+Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .CreateBootstrapLogger();
+Log.Information("Starting up");
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+try
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    var builder = WebApplication.CreateBuilder(args);
+    builder.Services.AddApplication();
+
+
+    #region Serilog    
+    builder.Host.UseSerilog((ctx, lc) =>
+    lc.WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}")
+    .WriteTo.File("log.txt", rollingInterval: RollingInterval.Day)
+    .ReadFrom.Configuration(ctx.Configuration)); 
+    #endregion
+
+    // Add services to the container.
+    builder.Services.AddControllers();
+    // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+    builder.Services.AddEndpointsApiExplorer();
+    builder.Services.AddSwaggerGen();
+
+    var app = builder.Build();
+
+    // Configure the HTTP request pipeline.
+    if (app.Environment.IsDevelopment())
+    {
+        app.UseSwagger();
+        app.UseSwaggerUI();
+    }
+
+    app.UseHttpsRedirection();
+
+    app.UseAuthorization();
+
+    app.MapControllers();
+
+    app.Run();
 }
 
-app.UseHttpsRedirection();
+catch (Exception ex)
+{
+    Log.Fatal(ex, "Unhandled exception");
+}
 
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();
+finally
+{
+    Log.Information("Shut down complete");
+    Log.CloseAndFlush();
+}
