@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using System.Reflection.Metadata.Ecma335;
 using Wallet.Application.Models.Transaction.Queries.GetTransaction;
 using Wallet.Application.Models.Transaction.Queries.GetTransactions;
@@ -13,6 +14,7 @@ namespace Wallet.Api.Controllers
     public class TransactionController : ControllerBase
     {
         private readonly ISender _sender;
+        private string _ip;
 
         public TransactionController(ISender sender)
         {
@@ -23,7 +25,8 @@ namespace Wallet.Api.Controllers
         public IActionResult GetAll(GetTransactionsQuery query)
         {
             var result =  _sender.Send(query).Result;
-
+            _ip = Request.HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
+            Log.Information($"User with ip ({_ip}) Executed GetAllTransactions");
             return Ok(result);
         }
 
@@ -31,7 +34,8 @@ namespace Wallet.Api.Controllers
         public IActionResult GetById(GetTransactionQuery query)
         {
             var result = _sender.Send(query).Result;
-
+            _ip = Request.HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
+            Log.Information($"User with ip ({_ip}) Executed GetById({query.Id})");
             return Ok(result);
         }
 
@@ -39,7 +43,8 @@ namespace Wallet.Api.Controllers
         public IActionResult GetByWalletId(GetTransactionsByWalletIdQuery query)
         {
             var result = _sender.Send(query).Result;
-
+            _ip = Request.HttpContext.Connection.RemoteIpAddress.MapToIPv4().ToString();
+            Log.Information($"User with ip ({_ip}) Executed GetByWalletId({query.WalletId})");
             return Ok(result);
         }
     }
