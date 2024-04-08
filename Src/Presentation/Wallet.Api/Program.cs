@@ -32,13 +32,14 @@ try
         };
     });
 
-    builder.Services.AddAuthorization(c =>
-    {
-        c.AddPolicy("myPolicy", c =>
-        {
-            c.RequireClaim("scope", "walletapi");
-        });
-    });
+    //builder.Services.AddAuthorization(c =>
+    //{
+    //    c.AddPolicy("myPolicy", c =>
+    //    {
+    //        c.RequireClaim("scope", "walletapi");
+    //    });
+    //    c.AddPolicy("noPolicy", c => { });
+    //});
     #endregion
 
     // Add services to the container.
@@ -55,13 +56,19 @@ try
         app.UseSwagger();
         app.UseSwaggerUI();
     }
+    else
+    {
+        app.UseSwagger();
+        app.UseSwaggerUI();
+    }
+
 
     app.UseHttpsRedirection();
 
     app.UseAuthentication();
     app.UseAuthorization();
 
-    app.MapControllers().RequireAuthorization("myPolicy");
+    app.MapControllers();
 
     app.Run();
 }

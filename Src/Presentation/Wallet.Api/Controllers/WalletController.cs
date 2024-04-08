@@ -68,7 +68,7 @@ public class WalletController : ControllerBase
         return Ok($"A wallet named {command.Title} was created for {command.PhoneNumber}");
     }
 
-    [HttpDelete]
+    [HttpDelete("Delete")]
     public IActionResult Delete([FromBody] DeleteWalletCommand command)
     {
         if (!_sender.Send(new CheckWalletAvailabilityCommand(command.WalletId)).Result)
